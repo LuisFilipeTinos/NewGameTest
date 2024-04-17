@@ -7,6 +7,7 @@ public class PlayersController : MonoBehaviour
 {
     [SerializeField] bool isPlayerOne;
     [SerializeField] float speed;
+    [SerializeField] Transform ball;
     Rigidbody2D rb2d;
 
     bool isMovingUp;
@@ -33,6 +34,18 @@ public class PlayersController : MonoBehaviour
             isMovingDown = true;
             isMovingUp = false;
         }
+        //Caso queira fazer contra a máquina:
+        //else if (!isPlayerOne && ball.position.y > transform.position.y)
+        //{
+        //    isMovingUp = true;
+        //    isMovingDown = false;
+        //}
+        //else if (!isPlayerOne && ball.position.y < transform.position.y)
+        //{
+        //    isMovingDown = true;
+        //    isMovingUp = false;
+        //}
+        //Caso queira fazer multiplayer:
         else if (!isPlayerOne && Input.GetKey(KeyCode.UpArrow))
         {
             isMovingUp = true;
